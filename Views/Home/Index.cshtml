@@ -1,0 +1,104 @@
+﻿@model Wunderman_Thompson_MSC_Assessment.Models.Employee
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Home" asp-action="Index" method="post" class="mt-3">
+    <h4>Register your interest</h4>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="EmployeeId" />
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input asp-for="FirstName" class="form-control" placeholder="First Name*">
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <div class="col-sm-6">
+            <input asp-for="LastName" class="form-control" placeholder="Last Name*">
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+
+        <div class="col-sm-6">
+            <input asp-for="Organisation" class="form-control" placeholder="Organisation*">
+            <span asp-validation-for="Organisation" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input asp-for="WorkEmail" class="form-control" placeholder="Work Email*">
+            <span asp-validation-for="WorkEmail" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number*">
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="checkbox" asp-for="CheckBoxValue1" /> <label asp-for="CheckBoxValue1" class="control-label"></label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="checkbox" asp-for="CheckBoxValue2" /> <label asp-for="CheckBoxValue2" class="control-label"></label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="checkbox" asp-for="CheckBoxValue3" /> <label asp-for="CheckBoxValue3" class="control-label"></label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="checkbox" asp-for="CheckBoxValue4" /> <label asp-for="CheckBoxValue4" class="control-label"></label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input type="checkbox" asp-for="CheckBoxValue5" /> <label asp-for="CheckBoxValue5"></label>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label asp-for="OptionalText" class="control-label"></label>
+        <div class="col-sm-6">
+            <textarea asp-for="Optional" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input asp-for="Industry" class="form-control" placeholder="Industry*">
+            <span asp-validation-for="Industry" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.message))
+{
+    <p>@ViewBag.message</p>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
